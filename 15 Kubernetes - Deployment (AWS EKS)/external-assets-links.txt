@@ -1,0 +1,3 @@
+
+247 Create-a-VPC
+https://docs.aws.amazon.com/eks/latest/userguide/create-public-private-vpc.html#create-vpc

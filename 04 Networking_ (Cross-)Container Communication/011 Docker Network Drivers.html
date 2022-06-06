@@ -1,0 +1,18 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>011 Docker Network Drivers</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>Docker Networks actually support different kinds of "<strong>Drivers</strong>"&nbsp;which influence the behavior of the Network.</p><p>The default driver is the "<strong>bridge</strong>"&nbsp;driver - it provides the behavior shown in this module (i.e. Containers can find each other by name if they are in the same Network).</p><p>The driver can be set when a Network is created, simply by adding the <code>--driver</code> option.</p><pre class="prettyprint linenums">docker network create --driver bridge my-net</pre><p><em>Of course, if you want to use the "bridge"&nbsp;driver, you can simply omit the entire option since "bridge"&nbsp;is the default anyways.</em></p><p>Docker also supports these alternative drivers - though you will use the "bridge" driver in most cases:</p><ul><li><p><strong>host</strong>:&nbsp;For standalone containers, isolation between container and host system is removed (i.e. they share localhost as a network)</p></li><li><p><strong>overlay</strong>: Multiple Docker daemons (i.e. Docker running on different machines)&nbsp;are able to connect with each other. Only works in "Swarm" mode which is a dated /&nbsp;almost deprecated way of connecting multiple containers</p></li><li><p><strong>macvlan</strong>: You can set a custom MAC&nbsp;address to a container - this address can then be used for communication with that container</p></li><li><p><strong>none</strong>: All networking is disabled.</p></li><li><p><strong>Third-party plugins</strong>:&nbsp;You can install third-party plugins which then may add all kinds of behaviors and functionalities</p></li></ul><p>As mentioned, the "<strong>bridge</strong>"&nbsp;driver makes most sense in the vast majority of scenarios.</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

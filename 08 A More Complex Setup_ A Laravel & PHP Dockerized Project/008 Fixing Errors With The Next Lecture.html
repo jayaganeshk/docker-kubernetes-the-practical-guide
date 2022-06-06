@@ -1,0 +1,36 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>008 Fixing Errors With The Next Lecture</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>You can ignore this lecture if you're not facing errors in the next lecture. However, if you do, take another look at this text lecture here.</p><p>---</p><p>When using <strong>Docker on&nbsp;Linux</strong>, you might face <strong>permission errors </strong>when adding a bind mount as shown in the next lecture. If you do, try these steps:</p><p>Change the <code>php.dockerfile</code> so that it looks like that:</p><pre class="prettyprint linenums">FROM php:8.0-fpm-alpine
+
+WORKDIR /var/www/html
+
+COPY src .
+
+RUN docker-php-ext-install pdo pdo_mysql
+
+RUN addgroup -g 1000 laravel &amp;&amp; adduser -G laravel -g laravel -s /bin/sh -D laravel
+
+USER&nbsp;laravel</pre><p>Please note that the <code>RUN chown</code> instruction was removed here, instead we now create a user "laravel"&nbsp;which we use (with the <code>USER</code> instruction) for commands executed inside of this image /&nbsp;container).</p><p>Also edit the <code>composer.dockerfile</code> to look like this:</p><pre class="prettyprint linenums">FROM composer:latest
+
+RUN addgroup -g 1000 laravel &amp;&amp; adduser -G laravel -g laravel -s /bin/sh -D laravel
+
+USER&nbsp;laravel
+
+WORKDIR /var/www/html
+
+ENTRYPOINT [ "composer", "--ignore-platform-reqs" ]</pre><p>Here, we add that same "laravel"&nbsp;user and use it for creating the project therefore.</p><p>These steps should ensure that all files which are created by the Composer container are assigned to a user named "laravel"&nbsp;which exists in all containers which have to work on the files. </p><p>Also see this Q&amp;A&nbsp;thread: <a href="https://www.udemy.com/course/docker-kubernetes-the-practical-guide/learn/#questions/12986850/" rel="noopener noreferrer" target="_blank">https://www.udemy.com/course/docker-kubernetes-the-practical-guide/learn/#questions/12986850/</a></p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

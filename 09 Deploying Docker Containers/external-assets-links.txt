@@ -1,0 +1,18 @@
+
+130 Connecting-via-SSH-on-Windows-PuTTY-
+https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#putty
+
+130 Getting-Started-with-AWS-Full-Guide
+https://academind.com/learn/aws/the-basics/getting-started-with-aws/
+
+130 A-Closer-Look-at-EC2
+https://academind.com/learn/aws/the-basics/ec2-for-humans/
+
+130 Understanding-VPC-Subnets
+https://academind.com/learn/aws/the-basics/aws-vpc-subnets/
+
+140 AWS-Getting-Started-Tutorial
+https://academind.com/learn/aws/the-basics/
+
+141 Adding-a-Load-Balancer-to-a-Fargate-Task-for-fixed-domain-names-
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html

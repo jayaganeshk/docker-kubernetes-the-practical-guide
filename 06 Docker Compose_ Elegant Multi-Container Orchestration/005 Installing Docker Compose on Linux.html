@@ -1,0 +1,18 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>005 Installing Docker Compose on Linux</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>On macOS and Windows, you should already have Docker Compose installed - it's set up together with Docker there.</p><p>On Linux machines, you need to install it separately.</p><p>These steps should get you there:</p><p>1. <code>sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code></p><p>2. <code>sudo chmod +x /usr/local/bin/docker-compose</code></p><p>3. <code>sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</code></p><p>4. to verify: <code>docker-compose --version</code></p><p>Also see: <a href="https://docs.docker.com/compose/install/" rel="noopener noreferrer" target="_blank">https://docs.docker.com/compose/install/</a></p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

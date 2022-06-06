@@ -1,0 +1,18 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>021 Environment Variables & Security</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>One important note about <strong>environment variables and security</strong>:&nbsp;Depending on which kind of data you're storing in your environment variables, you might not want to include the secure data directly in your <code>Dockerfile</code>.</p><p>Instead, go for a separate environment variables file which is then only used at runtime (i.e. when you run your container with <code>docker run</code>).</p><p>Otherwise, the values are "baked into the image"&nbsp;and everyone can read these values via <code>docker history &lt;image&gt;</code>.</p><p>For some values, this might not matter but for credentials, private keys etc. you definitely want to avoid that!</p><p>If you use a separate file, the values are not part of the image since you point at that file when you run <code>docker run</code>. But make sure you don't commit that separate file as part of your source control repository, if you're using source control.</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                

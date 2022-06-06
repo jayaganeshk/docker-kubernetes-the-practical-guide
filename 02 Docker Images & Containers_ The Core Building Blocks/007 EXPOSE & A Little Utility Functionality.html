@@ -1,0 +1,18 @@
+
+                <html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>007 EXPOSE & A Little Utility Functionality</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>In the last lecture, we started a container which also <strong>exposed</strong> a port (port 80).</p><p>I just want to clarify again, that <code>EXPOSE&nbsp;80</code> in the <code>Dockerfile</code> in the end is <strong>optional</strong>. It <strong>documents</strong> that a process in the container will expose this port. But you still need to then actually expose the port with <code>-p</code> when running docker run. So technically, <code>-p</code> is the <strong>only required part</strong> when it comes to listening on a port. Still, it is a <strong>best practice</strong> to also add <code>EXPOSE</code>&nbsp;in the <code>Dockerfile</code> to document this behavior.</p><p>As an additional<strong> quick side-note</strong>:&nbsp;For <strong>all docker commands</strong> where an <strong>ID</strong> can be used, you <strong>don't always have to copy</strong> / write out the <strong>full id.</strong></p><p>You can also<strong> just use the first (few) character(s)</strong> - just enough to have a unique identifier.</p><p>So instead of </p><pre class="prettyprint linenums">docker run abcdefg</pre><p>you could also run</p><pre class="prettyprint linenums">docker run abc</pre><p>or, if there's no other image ID starting with "a", you could even run just:</p><pre class="prettyprint linenums">docker run a</pre><p><strong>This applies to ALL&nbsp;Docker commands where IDs are needed.</strong></p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
+                
